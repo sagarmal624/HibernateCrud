@@ -6,10 +6,7 @@ import com.sagarandcompany.HibernateCrud.services.PersonService;
 import com.sagarandcompany.HibernateCrud.util.ResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/person")
 @RestController
@@ -22,12 +19,16 @@ public class PersonController {
         return personService.save(person);
     }
 
-    public void get() {
+    @GetMapping("/get/{id}")
+    public ResponseDTO get(@PathVariable("id") Long id) {
+        return personService.get(id);
 
     }
-
-    public void delete() {
-    }
+//
+//    @DeleteMapping("/delete/{id}")
+//    public ResponseDTO delete(@PathVariable("id") Long id) {
+//        return personService.delete(id);
+//    }
 
     public void update() {
     }
