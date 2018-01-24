@@ -1,6 +1,8 @@
 package com.sagarandcompany.HibernateCrud.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Person {
@@ -10,6 +12,37 @@ public class Person {
     private String name;
     private String email;
     private Integer salary;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Task> taskList = new ArrayList<>();
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Hobby> hobbies = new ArrayList<>();
+
+    public List<Hobby> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(List<Hobby> hobbies) {
+        this.hobbies = hobbies;
+    }
+
+    public List<Task> getTaskList() {
+        return taskList;
+    }
+
+    public void setTaskList(List<Task> taskList) {
+        this.taskList = taskList;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public Long getId() {
         return id;
@@ -42,4 +75,5 @@ public class Person {
     public void setSalary(Integer salary) {
         this.salary = salary;
     }
+
 }
