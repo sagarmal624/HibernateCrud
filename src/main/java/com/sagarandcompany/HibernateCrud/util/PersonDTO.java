@@ -1,12 +1,8 @@
-package com.sagarandcompany.HibernateCrud.domain;
+package com.sagarandcompany.HibernateCrud.util;
 
 import javax.persistence.*;
 
-@Cacheable(true)
-@Entity
-public class Person {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class PersonDTO {
     private Long id;
     private String name;
     private String email;

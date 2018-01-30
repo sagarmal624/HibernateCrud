@@ -24,11 +24,11 @@ public class PersonController {
         return personService.get(id);
 
     }
-//
-//    @DeleteMapping("/delete/{id}")
-//    public ResponseDTO delete(@PathVariable("id") Long id) {
-//        return personService.delete(id);
-//    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseDTO delete(@PathVariable("id") Long id) {
+        return personService.delete(id);
+    }
 
     public void update() {
     }
