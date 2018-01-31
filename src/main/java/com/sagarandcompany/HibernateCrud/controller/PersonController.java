@@ -1,7 +1,6 @@
 package com.sagarandcompany.HibernateCrud.controller;
 
 import com.sagarandcompany.HibernateCrud.domain.Person;
-import com.sagarandcompany.HibernateCrud.repository.hibernate.PersonRepositoryImpl;
 import com.sagarandcompany.HibernateCrud.services.PersonService;
 import com.sagarandcompany.HibernateCrud.util.ResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,6 @@ public class PersonController {
     @GetMapping("/get/{id}")
     public ResponseDTO get(@PathVariable("id") Long id) {
         return personService.get(id);
-
     }
 
     @DeleteMapping("/delete/{id}")

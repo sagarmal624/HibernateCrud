@@ -2,7 +2,6 @@ package com.sagarandcompany.HibernateCrud.domain;
 
 import javax.persistence.*;
 
-@Cacheable(true)
 @Entity
 public class Person {
     @Id
@@ -11,6 +10,16 @@ public class Person {
     private String name;
     private String email;
     private Integer salary;
+    @Version
+    private Integer version;
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
 
     public Long getId() {
         return id;
