@@ -23,4 +23,8 @@ public class PersonController {
         return personService.delete(id);
     }
 
+    @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseDTO getAll() {
+        return personService.getAll();
+    }
 }

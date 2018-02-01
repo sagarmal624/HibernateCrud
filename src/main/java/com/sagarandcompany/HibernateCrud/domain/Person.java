@@ -12,20 +12,30 @@ public class Person {
     private String name;
     private String email;
     private Integer salary;
-    @OneToOne(cascade = CascadeType.ALL)
-    private Address address;
+    private Integer deptno;
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<Task> taskList = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Hobby> hobbies = new ArrayList<>();
-
-    public List<Hobby> getHobbies() {
-        return hobbies;
+    public Person() {
     }
 
-    public void setHobbies(List<Hobby> hobbies) {
-        this.hobbies = hobbies;
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public Person(Long id, String name, Integer salary) {
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+    }
+
+    public Integer getDeptno() {
+        return deptno;
+    }
+
+    public void setDeptno(Integer deptno) {
+        this.deptno = deptno;
     }
 
     public List<Task> getTaskList() {
@@ -36,13 +46,6 @@ public class Person {
         this.taskList = taskList;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 
     public Long getId() {
         return id;
