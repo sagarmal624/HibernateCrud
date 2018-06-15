@@ -35,6 +35,16 @@ public class PersonService {
         Object person2 = personRepository.getOne(id);
         Object person3 = personRepository.getOne(id);
 
+        Object person4 = personRepository.findOne(id);
+        Object person5 = personRepository.findOne(id);
+        Object person6 = personRepository.findOne(id);
+
+
+        Object person7 = personRepository.findById(id);
+        Object person8 = personRepository.findById(id);
+        Object person9 = personRepository.findById(id);
+
+
         ResponseDTO responseDTO = new ResponseDTO();
         if (person != null) {
             PersonDTO personDTO = new PersonDTO();
@@ -43,7 +53,6 @@ public class PersonService {
             responseDTO.setStatus(true);
             responseDTO.setData(personDTO);
         }
-        Object person4 = personRepository.getOne(id);
 
         return responseDTO;
     }
